@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const studentSchema = new mongoose.Schema({name: String,
 					email: String,
-					pass_hash: String});
+					passHash: String});
 
 const Student = mongoose.model("Student", studentSchema);
 
