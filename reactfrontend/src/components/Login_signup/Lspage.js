@@ -1,19 +1,22 @@
 import './Lstyle.css'
+import { useState } from 'react'
 
 const Lspage = () => {
+
+  const [Credentials, SetCred] = useState({ username: '', password: '' });
   return (
     <div className='center'>
       <h1 id='mainh'>Login</h1>
-      <form method='post'>
+      <form onSubmit={e => SetCred({ ...Credentials, username: document.getElementById('usrnm').value, password: document.getElementById('pswd').value })}>
 
         <div className='txt_field'>
-          <input type='text' required />
+          <input type='text' id='usrnm' required />
           <span></span>
           <label>Username</label>
         </div>
 
         <div className='txt_field'>
-          <input type='password' required />
+          <input type='password' id='pswd' required />
           <span></span>
           <label>Password</label>
         </div>
@@ -25,6 +28,10 @@ const Lspage = () => {
         <div className='signup_link'>
           Not a member? <a href='./Spage'>Signup</a>
         </div>
+
+        {/* <div>
+          {JSON.stringify(Credentials)}
+        </div> */}
 
       </form>
     </div >
