@@ -1,10 +1,10 @@
-import './Style.css'
+import './LSstyle.css'
 import { useState } from 'react'
 const Spage = () => {
 
     const [Credentials, SetCred] = useState({ username: '', email: '', password: '' });
     return (
-        <div>
+        <div className='pgCont'>
             <div className='center'>
                 <h1 id='mainh'>Signup</h1>
                 <form onSubmit={e => SetCred({ ...Credentials, username: document.getElementById('usrnm').value, email: document.getElementById('eml').value, password: document.getElementById('pswd').value })}>
